@@ -1,0 +1,170 @@
+<!-- 1.window -->
+<!-- 2. Document -->
+<!-- 3.Element
+     *Element
+-->
+
+
+
+
+
+<html>
+    <body>
+        <div>
+            <h2>  The DOM</h2>
+            <h4>The browser pulls in HTML documents, parses them, and creates object models of the pages in its memory. 
+                This model is the Document Object Model (DOM).</h4>
+        </div>
+
+        <div>
+            <h2>DOM Node</h2>
+            <h4>
+                Each element in the HTML document is represented by a DOM node. These nodes can 
+                be accessed and changed using JavaScript.
+            </h4>
+        </div>
+
+        <div>
+            <h2> Accessing Elements </h2>
+            <h4>
+                Before we can update a page, we need to find, or select, the element(s) that we want to update. In order to find an element, we need to search through the document. 
+                The syntax for the search looks something like this:</h4>
+        </div>
+
+        <div>
+            <h2> </h2>
+            <h5> </h5>
+        </div>
+
+        <div>
+            <h2>Accessing Dom Elements </h2>
+            <h3>
+                <ul>
+                    <li>
+                        document.getElementById('someid');
+                    </li>
+                    <li>
+                         document.getElementsByClassName('someclass');
+                    </li>
+                    <li>
+                          document.getElementsByTagName('LI');
+                    </li>
+                    <li>
+                         document.querySelector('.someclass');
+                    </li>
+                    <li>
+                        <!-- // Returns a list of the elements within the document (using depth-first pre-order traversal of the document's nodes)
+                        // that match the specified group of selectors. -->
+                        document.querySelectorAll('div.note, div.alert');
+                    </li>
+                </ul>
+             </h3>
+        </div>
+
+        <div>
+            <h2>Grab Children/Parent Node(s)</h2>
+            <ul>
+                <li>var stored = document.getElementById('someid');</li>
+                <li>var children = stored.childNodes;</li>
+                <li>
+                    <!-- // Get parent node -->
+                    var parental = children.parentNode;</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2 id="firstHeading">
+                
+            </h2>
+        </div>
+       
+    </body>
+</html>
+
+<style>
+   * {
+         background: rgb(23, 23, 57);
+         color: white;
+         font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+         text-align: center;
+         font-style: italic;
+    }
+
+    li {
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        background: rgb(99, 63, 99);
+    }
+</style>
+<script>
+    // Create New DOM Elements
+// create new elments
+var newHeading = document.createElement('h1');
+var newParagraph = document.createElement('p');
+
+// create text nodes for new elements
+var h1Text= document.createTextNode('This is a nice header text!');
+var pText= document.createTextNode('This is a nice paragraph text!');
+
+// attach new text nodes to new elements
+newHeading.appendChild(h1Text);
+newParagraph.appendChild(pText);
+
+
+/////////////////////////////////////////////////////////////////////////////////
+                            // Grab Children/Parent Node(s)
+/////////////////////////////////////////////////////////////////////////////////
+// Get child nodes
+var stored = document.getElementById('someid');
+var children = stored.childNodes;
+
+// Get parent node
+var parental = children.parentNode;
+
+
+/////////////////////////////////////////////////////////////////////
+                                // Add Elements to the DOM
+/////////////////////////////////////////////////////////////////////////
+
+// grab element on page you want to add stuff to
+var firstHeading = document.getElementById('firstHeading');
+
+// add both new elements to the page as children to the element we stored in firstHeading.
+firstHeading.appendChild(newHeading);
+firstHeading.appendChild(newParagraph);
+
+// can also insert before like so
+
+// get parent node of firstHeading
+var parent = firstHeading.parentNode;
+
+// insert newHeading before FirstHeading
+parent.insertBefore(newHeading, firstHeading);
+
+
+///////////////////////////////////////////////////////////////////////////
+                             // Add/Remove/Toggle/Check Classes
+ /////////////////////////////////////////////////////////////////////////////
+// grab element on page you want to use
+var firstHeading = document.getElementById('firstHeading');
+
+// will remove foo if it is a class of firstHeading
+firstHeading.classList.remove('foo');
+
+// will add the class 'anotherClass' if one does not already exist
+firstHeading.classList.add('anotherclass');
+
+// add or remove multiple classes
+firstHeading.classList.add('foo', 'bar');
+firstHeading.classList.remove('foo', 'bar');
+
+// if visible class is set remove it, otherwise add it
+firstHeading.classList.toggle('visible');
+
+// will return true if it has class of 'foo' or false if it does not
+firstHeading.classList.contains('foo');
+
+
+</script>

@@ -1,0 +1,147 @@
+<html>
+  <body>
+    <script>
+      /////////////////////simple object
+      let myObject = {
+        name: "abhishek",
+        lastname: "patil",
+        city: "gulbarga",
+        age: 22,
+        fullName() {
+          return this.name + " " + this.lastname;
+        },
+
+        info() {
+          this.video.forEach(function (tag) {
+            console.log(this.name + " " + tag);
+          }, this);
+        },
+
+        getcity() {
+          return `the city name ${this.lastname} ${this.city} `;
+        },
+        get myProfile() {
+          return this.name;
+        },
+        set newName(N) {
+          this.name = N;
+        },
+      };
+      function outFunction(val) {
+        return "Hello, my name is " + this.lastname + val;
+      }
+      // console.log(myObject)
+      // console.log("------------------------------------------")
+
+      // myObject.sayHii = outFunction
+      // console.log(myObject.sayHii(" Hello "))
+      // console.log("------------------------------------------")
+
+      // myObject.name = "adarsh"
+      // console.log(myObject)
+      // console.log("------------------------------------------")
+
+      // myObject.newName = "ajay changed"
+      // console.log(myObject)
+
+      //////////////////////////Object Constructor
+
+      function MyObjConstructor(name, lastname, city, age) {
+        this.name = name;
+        this.lastname = lastname;
+        (this.city = city),
+          (this.age = age),
+          (this.fullName = function () {
+            return this.name + " " + this.lastname;
+          });
+        //   get , set not applicable here
+
+        this.myarray = ["one", "two"];
+        this.mapping = function () {
+          let x = this.myarray.map((val) => val + " " + name);
+          return x;
+        };
+      }
+
+      let myObjConstruct = new MyObjConstructor(
+        "abhishek",
+        "Patil",
+        "gulbarga",
+        23
+      );
+      let myObjConstruct2 = new MyObjConstructor(
+        "something",
+        "surname",
+        "gulbarga",
+        23
+      );
+
+      MyObjConstructor.prototype.name = "not changes";
+
+      MyObjConstructor.prototype.Details = function () {
+        return this.name + " " + this.age;
+      };
+
+      // console.log(myObjConstruct)
+      // console.log("--------------------------------------")
+
+      // myObjConstruct.name = 'Adarsh'
+      // console.log(myObjConstruct)
+      // console.log("--------------------------------------")
+
+      // console.log(myObjConstruct.mapping())
+
+      //////////////////////////////////////////Classes
+
+      let name = "global";
+
+      class MyClass {
+        constructor(name, last) {
+          this.name = name;
+          this.last = last;
+          this.myarr = ["one", "two"];
+          this.mapping = function () {
+            return this.myarr.map((tag) => {
+              // =>binds this
+              console.log(this.name + " " + tag);
+            });
+          };
+        }
+
+        get info() {
+          this.myarr.forEach(function (tag) {
+            // no arrow so extra this arg passed
+            console.log(this.name + " " + tag);
+          }, this);
+        }
+
+        fullName() {
+          return "hello " + this.name;
+        }
+
+        get getname() {
+          return this.name;
+        }
+
+        set newName(N) {
+          if (N.length > 5) {
+            return (this.name = N);
+          }
+          return console.log("name length short");
+        }
+      }
+      let mycls = new MyClass("abhishek", "patil");
+      MyClass.prototype.name = "not changes";
+
+      console.log(mycls);
+      // console.log("-----------------------------------------------")
+      // mycls.name = "adarsh"
+      // console.log(mycls)
+      // console.log("-----------------------------------------------")
+      // mycls.mapping()
+      mycls.newName = "abhishekksetName";
+
+      console.log(mycls.name);
+    </script>
+  </body>
+</html>

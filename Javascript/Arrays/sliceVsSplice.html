@@ -1,0 +1,46 @@
+<html>
+<body>
+
+<script>
+
+// let languages = ["JavaScript", "Python", "C", "C++", "Java"];
+// // slicing from the third element
+// let new_arr1 = languages.slice(3,4);
+// console.log(new_arr1); // ['C++', ]
+
+
+//     var cars=['Benz', 'Innova', 'Breeza', 'Etios', 'Dzire'];
+//     var new_cars=cars.slice(1, 4); // slice will not modify roriginal array
+
+//     document.write("cars :", cars, "<br><br>");
+
+//     document.write("new_cars :", new_cars);
+
+let human = {
+  name: "David",
+  age: 23,
+};
+
+let arr = [human, "Nepal", "Manager"];
+let new_arr = arr.slice(1,2);
+
+console.log(arr)
+
+console.log(new_arr)
+
+/////////////////////
+
+let names = [
+            {name:"bike", price: { Brand:"mahindra"}},
+            {name:"CAR", price: { Brand:"Suzuki"}},
+            {name:"Plane", price: { Brand:"EMIRATES"}},
+         ]
+       let namePrint = names.filter((val)=>{
+                   return `<li>${val.name=="bike"}</li>`
+       }) 
+       document.write(namePrint)
+
+console.log(namePrint.map(val=>val.name))
+</script>
+</body>
+</html>

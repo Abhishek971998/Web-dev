@@ -1,0 +1,91 @@
+<html>
+  <body>
+    <script>
+      function hello1() {
+        return "Hello";
+      }
+      hello1(); // Hello
+
+      async function asyHello() {
+        return " async Hello ";
+      }
+      console.log(asyHello());
+      // Promise object
+
+      //asyn expression
+      let hello2 = async function () {
+        return "Hello 2";
+      };
+      // hello2();
+      hello2().then((value) => console.log(value));
+
+      //arrow functions
+      let hello3 = async function () {
+        return "Hello 3";
+      };
+      hello3().then((value) => console.log(value));
+
+      ///////////////////////////////////////
+
+      function sacryclown() {
+        return new Promise((res) => {
+          setTimeout(() => {
+            res("helloo");
+          }, 1000);
+        });
+      }
+
+      async function msg() {
+        let msg = await sacryclown();
+        console.log(msg);
+      }
+      msg();
+
+      ////////////////Ex03
+
+      function who() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("🤡");
+          }, 200);
+        });
+      }
+
+      function what() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("lurks");
+          }, 300);
+        });
+      }
+
+      function where() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("in the shadows");
+          }, 1500);
+        });
+      }
+
+      async function msg() {
+        const a = await who();
+        const b = await what();
+        const c = await where();
+
+        console.log(`${a} ${b} ${c}`);
+      }
+
+      msg(); // 🤡 lurks in the shadows <-- after 1 second
+
+      // ...
+
+      async function msg() {
+        const [a, b, c] = await Promise.all([who(), what(), where()]);
+
+        console.log(`${a} ${b} ${c}`);
+      }
+
+      msg(); // 🤡 lurks in the shadows <-- after 500ms
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>New Tab App</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/primitive-ui/dist/css/main.css"
+    />
+  </head>
+
+  <body>
+    <div class="small-container">
+      <h1>New Tab App</h1>
+
+      <form onsubmit="return validateForm()" id="myForm">
+        <input id="item" type="text" placeholder="New" required />
+        <button type="submit" id="clearInput">Add</button>
+      </form>
+      
+      <h2>Items</h2>
+      <ul></ul>
+      
+      <button>Clear All</button>
+    </div>
+
+    <script>
+        let arr = []
+
+        function validateForm(){
+         var name = document.getElementById("item").value
+         arr.push(name)
+         console.log(name)
+        }
+
+        console.log(arr)
+        
+        var inputs = document.getElementById('item');
+        var form = document.getElementById("myForm");
+        
+        form.addEventListener('submit', (e) => {
+          e.preventDefault()
+             inputs.value = ''
+        }
+        )
+
+    </script>
+  </body> 
+</html>

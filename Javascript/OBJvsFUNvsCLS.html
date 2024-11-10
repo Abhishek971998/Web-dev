@@ -1,0 +1,91 @@
+<html>
+<body>
+<script>
+///////////////                    OBJECTS  Constructor
+            let Phone = function(category,brand,Ram,memory){
+                this.category=category,
+                this.brand=brand,
+                this.Ram = Ram,
+                this.memory= memory,
+                this.details =function() {
+              return this.brand + " " + this.memory;
+            };
+            }
+
+            Phone.prototype.FullDetails = function() {
+              return this.brand + " " + this.memory;
+            };
+
+            let mobile=  new Phone("Mobile","Apple",4,128)
+            let mobile2= new Phone("Mobile","Samsung",8,256)
+            mobile2.brand="MI"
+            console.log(mobile2.details())
+            console.log(Object.keys(mobile))
+
+
+/////////////////                  CLASSESS Constructor
+        class MyClass{
+            constructor(name,last){
+                    this.name= name;
+                    this.last=last;
+                }
+            present(){
+                return "Hello" +this.name
+            }
+        }
+        // let Jhon = new MyClass("Jhon", "Doe");
+        // console.log(Jhon) 
+
+//////////////////////////////////Inheritance  /////////////////
+        class Mary extends MyClass{
+            constructor(name,last){
+                super(name,last);
+            }
+            get lastName(){
+                return this.last
+            }
+            show() {
+            return this.name + ', it is a ' + this.last;
+          }
+        }
+
+
+        let mary2 = new Mary("Mary","Dove","GLB")
+// console.log(mary2.show()) 
+// console.log(mary2.lastName)
+////////////////////////////////////////////         FUNCTION CONSTRUCTOR                    ////////////////////////////////
+
+
+        function Fconstructors(name,lastname,age,state,Job,country) {
+          this.name = name;
+          this.lastname = lastname;
+          this.myarray = ["one","two"]
+          this.mapping =function(){
+                let x= this.myarray.map(val=>val + name)
+                return x
+            };
+          this.fullName=  function (params) {
+              return this.name + " "+ this.lastname
+          }
+        }
+
+        Fconstructors.prototype.age = 23
+        Fconstructors.prototype.name= "adasrsh" // we connot change name
+
+        let fconstructor = new Fconstructors("Abhishek","Patil")
+        fconstructor.addingNew = " sasa"  //we can add new prop to fcons
+        console.log()
+
+
+        console.log(fconstructor.fullName())
+        console.log(fconstructor.age)      // age will not added on Fconstructors
+
+        fconstructor.name = "adarsjjjjjj"  // we can change name of fconstr
+        console.log(fconstructor)
+
+        console.log(fconstructor.mapping())
+
+
+</script>
+</body>
+</html>

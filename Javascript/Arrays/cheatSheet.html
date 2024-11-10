@@ -1,0 +1,91 @@
+<html>
+  <body>
+    <script>
+      let array = ["one", "two", "three", 3, 0, 1];
+      let array2 = ["four"];
+
+      // Check if array is indeed an array
+      let checkArray = Array.isArray(array);
+      console.log("checkArray:", checkArray); // true
+
+      // Get length of the array
+      let getLength = array.length;
+      console.log("getLength:", getLength); // 6
+
+      // Concatenate array with array2
+      let concat = array.concat(array2);
+      console.log("concat:", concat); // ["one", "two", "three", 3, 0, 1, "four"]
+
+      // Reverse the array
+      let reverse = array.reverse();
+      console.log("reverse:", reverse); // [1, 0, 3, "three", "two", "one"]
+
+      // Iterate over the array and log each element
+      array.forEach((val) => {
+        console.log("forEach:", val + ",");
+      }); // 1, 0, 3, three, two, one,
+
+      // Find an element in the array
+      let find = array.find((val) => val === "one");
+      console.log("find:", find); // "one"
+
+      // Map each element to a new value
+      let map = array.map((val) => val + ",");
+      console.log("map:", map); // ["1,", "0,", "3,", "three,", "two,", "one,"]
+
+      // Check if every element in the array meets a condition
+      let every = array.every((val) => typeof val === "string");
+      console.log("every:", every); // false (because of numbers in array)
+
+      // Find the index of an element in the array
+      let findIndex = array.findIndex((val) => val === "three");
+      console.log("findIndex:", findIndex); // 3
+
+      // Sort the array (note: sorting mixed types can be tricky)
+      let sort = array.sort((a, b) => (a.toString() > b.toString() ? 1 : -1));
+      console.log("sort:", sort); // [0, 1, 3, "one", "three", "two"]
+
+      // Push a new element to the end of the array
+      let push = array.push("newElm");
+      console.log("push (new length):", push); // 7
+      console.log("array after push:", array); // [0, 1, 3, "one", "three", "two", "newElm"]
+
+      // Pop the last element from the array
+      let pop = array.pop();
+      console.log("pop:", pop); // "newElm"
+      console.log("array after pop:", array); // [0, 1, 3, "one", "three", "two"]
+
+      // Unshift a new element to the start of the array
+      let unshift = array.unshift("newVal");
+      console.log("unshift (new length):", unshift); // 7
+      console.log("array after unshift:", array); // ["newVal", 0, 1, 3, "one", "three", "two"]
+
+      // Shift the first element from the array
+      let shift = array.shift();
+      console.log("shift:", shift); // "newVal"
+      console.log("array after shift:", array); // [0, 1, 3, "one", "three", "two"]
+
+      // Check if array includes a specific element
+      let includes = array.includes("three");
+      console.log("includes 'three':", includes); // true
+
+      // Reduce the array to a single value
+      let reduce = array.reduce(
+        (total, value) => total.toString() + value.toString()
+      );
+      console.log("reduce:", reduce); // "013onetwothree"
+
+      // Splice elements from the array
+      let arrDelete = array.splice(2, 1); // Delete 1 element at index 2
+      console.log("arrDelete:", arrDelete); // ["3"]
+      console.log("array after arrDelete:", array); // [0, 1, "one", "three", "two"]
+
+      // Splice another set of elements from the array
+      let arrDelete2 = array.splice(2, 3); // Delete 3 elements starting from index 2
+      console.log("arrDelete2:", arrDelete2); // ["one", "three", "two"]
+      console.log("array after arrDelete2:", array); // [0, 1]
+
+      console.log(arrDelete + "splice");
+    </script>
+  </body>
+</html>

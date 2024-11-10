@@ -1,0 +1,37 @@
+<html>
+<body>
+   
+<script>
+ class Company {
+      constructor(firstName) {
+           this.firstName = firstName;
+         }
+          get name(){
+             return this.firstName
+          }
+            set changeName(newName) {
+            this.firstName = newName;
+        }
+     }
+
+    let Jhon = new Company("Jhon", "Doe");
+    Jhon.changeName= "name changed"
+    console.log(Jhon.name)
+/////////////////////////Objects
+
+const student = {
+    firstName: 'Monica',
+    lastName: "Doe",
+    set changeName(value) {
+        const parts = value.split(" ");
+        this.firstName = parts[0];
+        this.lastName= parts[1]
+    }
+};
+
+student.changeName = 'Sarah Smith';
+console.log(student);
+
+</script>
+</body>
+</html>

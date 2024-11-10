@@ -1,0 +1,32 @@
+
+
+<html>
+    <body>
+        <script>
+
+
+
+let  person = {
+    firstName:"abhishek",
+    lastName:23,
+    fullName(){
+        return this.firstName + " " + this.lastName
+    },
+
+    b: () =>console.log("b called"),
+
+    c: function() {
+       console.log(this.b());
+   }
+
+
+}
+person.c()
+
+
+
+
+
+        </script>
+    </body>
+</html>

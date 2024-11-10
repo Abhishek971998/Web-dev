@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <input type="text" name="input1" id="input1" value="abhishek"><br>
+
+        <input type="text" name="input2" id="input2" value="patil"><br>
+
+        <input type="text" name="input3" id="input3">
+        <button type="submit" onclick="getInput()">Submit</button>
+
+      
+        <div >
+
+            <input type='text' name='fname' class='chatinput' id='chatinput'>
+            <p class='printchatbox' id='printchatbox'></p>
+        </div>
+
+    </body>
+</html>
+
+<script>
+    function getInput(){
+        console.log("clikced")
+        let input1,input2,input3;
+        input1 = document.getElementById("input1").value;
+        input2 = document.getElementById("input2").value
+        input3 = document.getElementById("input3").value = input1 + " " + input2
+        console.log(input1+ " "+input2)
+    }
+
+         var inputBox = document.getElementById('chatinput');
+
+            inputBox.onkeyup = function(){
+                document.getElementById('printchatbox').innerHTML = inputBox.value;
+            }
+
+    // getInput()
+</script>

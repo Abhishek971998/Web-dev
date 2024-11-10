@@ -1,0 +1,63 @@
+<html>
+    <body>
+        <script>
+            // Numbers are also immutable. Doing some math on the num1 variable and setting it to a 
+            // new variable doesn’t change the value of num1.
+            var num1 = 42;
+            var num2 = num1 - 7;
+
+            // logs 42
+            console.log(num1 ,'num1 remains same'); //
+            // logs 35
+            console.log(num2);
+
+            // /////////Strings
+
+            var str1 = 'Hello, there!';
+            var str2 = str1.replace("Hello","heyhey");
+
+            // logs "Hello, there!"
+            console.log(str1);
+
+            // logs "Hello"
+            console.log(str2);
+
+/////////////////////////////Array are mutable changle
+            var arr1 = ['sandwich', 'soda', 'chips'];
+
+            var arr2 = arr1;
+            arr2.push('cookie');
+
+            // logs ["sandwich", "soda", "chips", "cookie"]
+
+            console.log(arr1 ,"arr1 changes");    //arr1 also changes
+
+            // logs ["sandwich", "soda", "chips", "cookie"]
+            console.log(arr2);
+
+///////////////////////objects are alos mutable
+
+            var obj1 = {
+                sandwich: 'turkey',
+                soda: 'Pepsi',
+                chips: 'Cape Cod'
+            };
+
+            var obj2 = obj1;
+            obj2.cookie = 'chocolate chip';
+
+            // logs {sandwich: "turkey", soda: "Pepsi", chips: "Cape Cod", cookie: "chocolate chip"}
+            console.log(obj1);
+
+            // logs {sandwich: "turkey", soda: "Pepsi", chips: "Cape Cod", cookie: "chocolate chip"}
+            console.log(obj2);
+
+
+            
+            console.log(obj1===obj2)
+
+
+
+        </script>
+    </body>
+</html>

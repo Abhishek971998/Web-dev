@@ -1,0 +1,72 @@
+<html>
+    <body>
+      
+
+<script type="text/javascript">
+
+
+// Undefined: It occurs when a variable has been declared but has not been 
+//    assigned with any value. Undefined is not a keyword.
+
+// Undeclared: It occurs when we try to access any variable that
+//  is not initialized or declared earlier using var or const keyword.
+
+
+//let cannot be re-declared ,while var dont five ant arror
+
+// let a = "abhi"
+let a = 'something'  /// a has declared already
+    
+     console.log(varName)           //Undefined
+     var  varName = "abhishek"
+     console.log("//////////////////////////")
+
+     
+    //   console.log(letName)          //reference error cannot acces before initiaztion
+     let  letName = "abhishek"
+     console.log("//////////////////////////")
+     
+      
+    //  console.log(ConstName)           //reference error cannot acces before initiaztion
+     const  ConstName = "abhishek"
+     console.log("//////////////////////////")
+
+
+
+     var geek;
+    console.log(geek)  // undeine
+
+
+
+    let leetfgeek;
+    console.log(leetfgeek)
+
+    //  console.log(x)   // not defined 
+
+
+    //  const myConst = "const variabel cannot be reassinged"
+    //  myConst = "we cant do this well get assignmet to const variabel error"
+    //  console.log(myConst)
+
+
+    //  CONST WITH OBJECT BEHAVES DIFFRENT WE CAN PROPRTY VALUE BYT NOT PROPERTY ITSELF
+
+    const constObj =  {
+        fName : "Abhishek",
+        lName:"Patil"
+    }
+
+    //  constObj = {
+    //     fName :"shdhjdj"
+    // }
+    // console.log(constObj)  // error assignmet to constant varibale
+
+
+   // while we can do this 
+         constObj.fName = "Jhon"
+         console.log(constObj) // {fNAme:"jhon",lName:"patil"}
+
+
+</script>
+    </body>
+</html>

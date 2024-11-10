@@ -1,0 +1,37 @@
+
+<html>
+    <body>
+        
+
+<script>
+
+   
+
+    function Person(firstName,lastName,age,state){
+       this.firstName = firstName,
+       this.lastName = lastName
+       this.age = age;
+       this.state = state;
+    }
+    let p1 = new Person("abhishek","patil" ,"21","karnataka")
+
+
+    console.log(p1)
+
+    Person.nationality = "Indian";   //undefined
+    //we cannot add new prop to function contsrauctoe
+
+    Person.prototype.nationality = "Indian";
+    //we can add throgh prototype     
+    console.log(p1.nationality)    // Indian
+
+    Person.prototype.fullName = function() {
+       return this.firstName + " " + this.lastName+" "+this.nationality
+      };
+      console.log(p1.fullName())
+
+
+
+</script>
+    </body>
+</html>

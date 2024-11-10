@@ -1,0 +1,34 @@
+<html>
+  <body>
+    <p id="store">LocalStore</p>
+
+    <script>
+      let profile = {
+        firstName: "Abhishek",
+        lastName: "Patil",
+        age: 21,
+      };
+
+      let setName = localStorage.setItem("Profile", JSON.stringify(profile));
+
+      let getName = JSON.parse(localStorage.getItem("Profile"));
+
+      document.getElementById("store").innerHTML = getName.firstName;
+      console.log(getName.firstName);
+
+      function update() {
+        let updateName = "adarsj";
+      }
+      update();
+
+      ////////////////////////////////////////////////////////
+      const person = {
+        name: "Obaseki Nosa",
+        location: "Lagos",
+      };
+      let c = localStorage.setItem("user", JSON.stringify(person));
+      let get = JSON.parse(localStorage.getItem("user"));
+      document.write(get.name);
+    </script>
+  </body>
+</html>

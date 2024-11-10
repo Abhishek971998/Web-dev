@@ -1,0 +1,127 @@
+<html>
+<body>
+<script>
+"use strict"
+
+
+let thisEx = {
+    name:"abhishek",
+     x(){
+      setTimeout((()=> {
+         console.log(this.name)
+      }) ,100)
+    }
+
+}
+
+thisEx.x()
+
+
+let name = "global"
+const walk = "dssd"
+
+
+
+let a  = {
+    name:"abhishek",
+    address:{
+        pincode:54545,
+        city:"glb"
+    },
+
+    fullName:function(){
+        return this.name +" " +this.address.city
+    },
+
+    video:["js","react","Angular"],
+    
+    info() {
+       this.video.forEach(function (tag) {
+            console.log(this.name + " " +tag)
+       },this)
+   },
+
+    details(){
+        this.video.forEach((val)=>{
+            console.log(this.name +" =>"+ val)
+        })
+    }
+
+}
+// a.info()    ////
+
+// a.details() ////
+/////////////////////////////////
+
+
+// constructor function
+class MyClass{
+            constructor(name,last){
+                    this.name= name;
+                    this.last=last;
+                    this.arr = ["abhishek",'adarsh']
+                    this.mapping =function(){
+                    let x =  this.arr.forEach((tag)=> {
+                                     console.log(tag)
+                                 })
+                            return x
+                            };
+                        }
+                    present(){
+                        return "Hello" +this.name
+                    }
+        }
+          MyClass.prototype.state= function(){
+              return this.name
+          }
+
+        let Jhon = new MyClass("Jhon", "Doe");
+        console.log(Jhon.state())
+
+        // let Wick = new MyClass("wick", "Doe");
+        // console.log(Wick.state())
+
+         Jhon.city= function(){
+             return this.last +"lasttttttt"
+         }
+         Jhon.name= "ajay"
+         console.log(Jhon.state())
+
+         console.log("////////////////////////////")
+
+        //  Jhon.mapping()
+//////////////////////////////////////////////////////////////////////
+
+function Fconstructors(name,lastname,age,state,Job,country) {
+          this.name = name;
+          this.lastname = lastname;
+          this.myarray = ["one","two"]
+          this.mapping =function(){
+                let x= this.myarray.map(val=>val + name)
+                return x
+            };
+          this.fullName=  function (params) {
+              return this.name + " "+ this.lastname
+          }
+         
+        }
+
+        Fconstructors.prototype.age = 23
+        Fconstructors.prototype.name= "adasrsh" // we connot change name
+
+        let fconstructor = new Fconstructors("Abhishek","Patil")
+        fconstructor.addingNew = " sasa"  //we can add new prop to fcons
+        console.log()
+
+
+        console.log(fconstructor.fullName())
+        console.log(fconstructor.age)      // age will not added on Fconstructors
+
+        fconstructor.name = "adarsjjjjjj"  // we can change name of fconstr
+        console.log(fconstructor)
+
+        console.log(fconstructor.mapping())
+
+</script>
+</body>
+</html>
